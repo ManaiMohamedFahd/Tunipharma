@@ -100,8 +100,19 @@ java.util.Date Date_Naissance = new java.util.Date(90, 01, 02);
 
         jLabel11.setText("Numèro de téléphone ");
 
+        tf_nom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_nomActionPerformed(evt);
+            }
+        });
+
         buttonGroup1.add(rb_homme);
         rb_homme.setText("Homme");
+        rb_homme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_hommeActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rb_femme);
         rb_femme.setText("Femme");
@@ -265,6 +276,14 @@ java.util.Date Date_Naissance = new java.util.Date(90, 01, 02);
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_botton_annulerActionPerformed
+
+    private void rb_hommeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_hommeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_hommeActionPerformed
+
+    private void tf_nomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_nomActionPerformed
 
     /**
      * @param args the command line arguments
