@@ -17,7 +17,7 @@ public class PharmacieDAO {
     
     public void insertPharmacie(Pharmacie ph) {
 
-        String requete = "insert into pharmacie  (nom_pharmacie,adresse_pharmacie,mail_pharmacie,telephone_pharmacie,numero_patente,gouvernaurat,jour_de_garde) values (?,?,?,?,?,?,?)";
+        String requete = "insert into pharmacies  (nom_pharmacie,adresse_pharmacie,mail_pharmacie,telephone_pharmacie,numero_patente,gouvernaurat,jour_de_garde) values (?,?,?,?,?,?,?)";
 
         try {
 
@@ -25,12 +25,12 @@ public class PharmacieDAO {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
 
             ps.setString(1, ph.getNom_pharmacie());
-            ps.setString(4, ph.getAdresse_pharmacie());     
+            ps.setString(2, ph.getAdresse_pharmacie());     
             ps.setString(3, ph.getMail_pharmacie());
             ps.setInt(4, ph.getTelephone_pharmacie());
             ps.setInt(5, ph.getNumero_patente());
             ps.setString(6, ph.getGouvernaurat());
-            ps.setString(6, ph.getJour_de_garde());
+            ps.setString(7, ph.getJour_de_garde());
             ps.executeUpdate();
             System.out.println("Ajout effectuée avec succès");
 
@@ -40,7 +40,7 @@ public class PharmacieDAO {
 
     }
     public void updatePharmacie(Pharmacie ph) {
-        String requete = "update pharmacie set Nom_pharmacie=?,Adresse_pharmacie=?,Mail_pharmacie=?,Telephone_pharmacie=?,Numero_patente=?,Gouvernaurat=?,Jour_de_garde=? where id_pharmacie=?";
+        String requete = "update pharmacies set Nom_pharmacie=?,Adresse_pharmacie=?,Mail_pharmacie=?,Telephone_pharmacie=?,Numero_patente=?,Gouvernaurat=?,Jour_de_garde=? where id_pharmacie=?";
 
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
