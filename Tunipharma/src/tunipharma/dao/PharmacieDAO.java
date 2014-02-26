@@ -5,7 +5,11 @@
 package tunipharma.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import tunipharma.entities.Pharmacie;
 import tunipharma.util.MyConnection;
 
@@ -70,6 +74,39 @@ public class PharmacieDAO {
             //Logger.getLogger(AdministrateurDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("erreur lors de la suppression " + ex.getMessage());
         }
+    }
+
+    public List<Pharmacie> DisplayAllPharmacies() {
+        
+        List<Pharmacie> listePharmacies = new ArrayList<Pharmacie>();
+
+        String requete = "select * from Administrateur";
+        try {
+            Statement statement = MyConnection.getInstance()
+                    .createStatement();
+            ResultSet resultat = statement.executeQuery(requete);
+
+            while (resultat.next()) {
+                Pharmacie pharmacie = new Pharmacie();
+                pharmacie.setId_pharmacie(resultat.getInt(1));
+                pharmacie.setNom_pharmacie(resultat.getString(2));
+                pharmacie.setAdresse_pharmacie(resultat.getString(3));
+                pharmacie.setMail_pharmacie(resultat.getString(4));
+                pharmacie.setTelephone_pharmacie(resultat.getInt(5));
+                pharmacie.setNumero_patente(resultat.getInt(6));
+                pharmacie.setGouvernaurat(resultat.getString(7));
+                pharmacie.setJour_de_garde(resultat.getString(8));
+//              administrateur.setImage_Profil(resultat.getImage(11));
+
+                listePharmacies.add(pharmacie);
+            }
+            return listePharmacies;
+        } catch (SQLException ex) {
+            //Logger.getLogger(AdministrateurDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors du chargement des Pharmacies " + ex.getMessage());
+            return null;
+        }
+    
     }
     
     
