@@ -64,7 +64,7 @@ public class PharmacieDAO {
         }
     }
     public void deletePharmacie(int num) {
-        String requete = "delete from pharmacie where id_pharmacie=?";
+        String requete = "delete from pharmacies where id_pharmacie=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setInt(1, num);
@@ -80,7 +80,7 @@ public class PharmacieDAO {
         
         List<Pharmacie> listpharmacie = new ArrayList<Pharmacie>();
 
-        String requete = "select * from Administrateur";
+        String requete = "select * from Pharmacies";
         try {
             Statement statement = MyConnection.getInstance()
                     .createStatement();
@@ -96,7 +96,6 @@ public class PharmacieDAO {
                 pharmacie.setNumero_patente(resultat.getInt(6));
                 pharmacie.setGouvernaurat(resultat.getString(7));
                 pharmacie.setJour_de_garde(resultat.getString(8));
-//              administrateur.setImage_Profil(resultat.getImage(11));
 
                 listpharmacie.add(pharmacie);
             }

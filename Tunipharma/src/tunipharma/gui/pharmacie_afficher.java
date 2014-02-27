@@ -103,7 +103,7 @@ public class pharmacie_afficher extends javax.swing.JFrame {
 
     private void Btn_supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_supprimerActionPerformed
         int a = jTable2.getSelectedRow();
-        int id =((Integer) jTable2.getValueAt(a,0));
+        int id =((Integer) jTable2.getValueAt(a ,0));
         PharmacieDAO pharmacieDAO = new PharmacieDAO();
         pharmacieDAO.deletePharmacie(id);
         JOptionPane.showMessageDialog(this, "pharmacie supprimer avec succés !", "Tunipharma",JOptionPane.DEFAULT_OPTION);

@@ -5,11 +5,14 @@
 package tunipharma.gui;
 
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import tunipharma.entities.Pharmacie;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import tunipharma.util.MyConnection;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -199,31 +202,32 @@ public class pharmacie_ajouter extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_gouvernauratActionPerformed
 
     private void br_AjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_br_AjouterActionPerformed
-        String type="";
-        if(rb_non_garde.isSelected())
-            type=rb_non_garde.getText();
-        if (rb_garde.isSelected())
-            type=rb_garde.getText();
-      try{
-        String requete = "insert into pharmacies  (nom_pharmacie,adresse_pharmacie,mail_pharmacie,telephone_pharmacie,numero_patente,gouvernaurat) values (?,?,?,?,?,?)";
-      PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setString(1, tf_nom_pharmacie.getText());
-            ps.setString(2, tf_adresse_pharmacie.getText());
-            ps.setString(3,tf_mail_pharmacie.getText());
-            int num =Integer.parseInt(tf_telephone_pharmacie.getText());
-            ps.setInt(4,num);
-            int patente =Integer.parseInt(tf_numero_patente.getText());
-            ps.setInt(5,patente);
-            ps.setString(6, type);
-            Pharmacie p = maliste.get(cb_gouvernaurat.getSelectedIndex());
-            ps.execute();
-          JOptionPane.showMessageDialog(null,"valide");
-      }
-      catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+        try {
+            String type="";
+            if(rb_non_garde.isSelected())
+                type=rb_non_garde.getText();
+            if (rb_garde.isSelected())
+                type=rb_garde.getText();
+          
+            String requete = "insert into pharmacies  (nom_pharmacie,adresse_pharmacie,mail_pharmacie,telephone_pharmacie,numero_patente,gouvernaurat,jour_de_garde) values (?,?,?,?,?,?,?)";
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+                ps.setString(1, tf_nom_pharmacie.getText());
+                ps.setString(2, tf_adresse_pharmacie.getText());
+                ps.setString(3,tf_mail_pharmacie.getText());
+                int num =Integer.parseInt(tf_telephone_pharmacie.getText());
+                ps.setInt(4,num);
+                int patente =Integer.parseInt(tf_numero_patente.getText());
+                ps.setInt(5,patente);
+                
+                String gouvernorat = cb_gouvernaurat.getItemAt(cb_gouvernaurat.getSelectedIndex())+"";
+                ps.setString(6, gouvernorat);
+                ps.setString(7, type);
+                ps.execute();
+              JOptionPane.showMessageDialog(null,"valide");
+        } catch (SQLException ex) {
+            Logger.getLogger(pharmacie_ajouter.class.getName()).log(Level.SEVERE, null, ex);
+        }
       
-      
-      }
     }//GEN-LAST:event_br_AjouterActionPerformed
 
     private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
