@@ -9,6 +9,7 @@ import tunipharma.entities.Pharmacie;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import tunipharma.util.MyConnection;
+import java.util.List;
 
 /**
  *
@@ -22,7 +23,7 @@ public class pharmacie_ajouter extends javax.swing.JFrame {
     public pharmacie_ajouter() {
         initComponents();
     }
-
+    List<Pharmacie> maliste;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -209,13 +210,12 @@ public class pharmacie_ajouter extends javax.swing.JFrame {
             ps.setString(1, tf_nom_pharmacie.getText());
             ps.setString(2, tf_adresse_pharmacie.getText());
             ps.setString(3,tf_mail_pharmacie.getText());
-            int num =tf_telephone_pharmacie.getX();
+            int num =Integer.parseInt(tf_telephone_pharmacie.getText());
             ps.setInt(4,num);
-            int patente =tf_numero_patente.getX();
+            int patente =Integer.parseInt(tf_numero_patente.getText());
             ps.setInt(5,patente);
-            ps.setString(6,cb_gouvernaurat.getToolTipText(null));
-            
-            
+            ps.setString(6, type);
+            Pharmacie p = maliste.get(cb_gouvernaurat.getSelectedIndex());
             ps.execute();
           JOptionPane.showMessageDialog(null,"valide");
       }

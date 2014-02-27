@@ -63,11 +63,11 @@ public class PharmacieDAO {
             System.out.println("erreur lors de la mise à jour " + ex.getMessage());
         }
     }
-    public void deletePharmacie(int id_pharmacie) {
+    public void deletePharmacie(int num) {
         String requete = "delete from pharmacie where id_pharmacie=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
-            ps.setInt(1, id_pharmacie);
+            ps.setInt(1, num);
             ps.executeUpdate();
             System.out.println("pharmacie supprimée");
         } catch (SQLException ex) {
@@ -78,7 +78,7 @@ public class PharmacieDAO {
 
     public List<Pharmacie> DisplayAllPharmacies() {
         
-        List<Pharmacie> listePharmacies = new ArrayList<Pharmacie>();
+        List<Pharmacie> listpharmacie = new ArrayList<Pharmacie>();
 
         String requete = "select * from Administrateur";
         try {
@@ -98,9 +98,9 @@ public class PharmacieDAO {
                 pharmacie.setJour_de_garde(resultat.getString(8));
 //              administrateur.setImage_Profil(resultat.getImage(11));
 
-                listePharmacies.add(pharmacie);
+                listpharmacie.add(pharmacie);
             }
-            return listePharmacies;
+            return listpharmacie;
         } catch (SQLException ex) {
             //Logger.getLogger(AdministrateurDao.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("erreur lors du chargement des Pharmacies " + ex.getMessage());

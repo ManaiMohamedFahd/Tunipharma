@@ -21,7 +21,7 @@ public class test_pharmacie {
         pharmacie.setAdresse_pharmacie("chagouani");
         pharmacie.setMail_pharmacie("chagouani@dd.com");
         pharmacie.setTelephone_pharmacie(222);
-        pharmacie.setNumero_patente(4444444);
+        pharmacie.setNumero_patente(44);
         pharmacie.setGouvernaurat("ben arous");
         pharmacie.setJour_de_garde("nongarde");
         

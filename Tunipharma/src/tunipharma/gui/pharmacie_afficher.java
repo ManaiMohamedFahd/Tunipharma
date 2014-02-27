@@ -33,18 +33,15 @@ public class pharmacie_afficher extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tab_pharmacie = new javax.swing.JTable();
         Btn_modifier = new javax.swing.JButton();
         Btn_supprimer = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("                 Liste pharmacie");
-
-        tab_pharmacie.setModel(new RestaurateursTableModel());
-        jScrollPane2.setViewportView(tab_pharmacie);
 
         Btn_modifier.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Btn_modifier.setText("Modifier");
@@ -62,6 +59,9 @@ public class pharmacie_afficher extends javax.swing.JFrame {
             }
         });
 
+        jTable2.setModel(new PharmacieTableModel());
+        jScrollPane1.setViewportView(jTable2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,11 +69,11 @@ public class pharmacie_afficher extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(244, 244, 244)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Btn_supprimer)
                     .addComponent(Btn_modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -89,10 +89,9 @@ public class pharmacie_afficher extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Btn_modifier)
                         .addGap(18, 18, 18)
-                        .addComponent(Btn_supprimer)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(Btn_supprimer))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
@@ -103,14 +102,14 @@ public class pharmacie_afficher extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_modifierActionPerformed
 
     private void Btn_supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_supprimerActionPerformed
-        Pharmacie ph1= new Pharmacie();
-        PharmacieDAO pharmacieDAO= new PharmacieDAO();
-        int index= tab_pharmacie.getSelectedRow();
-
-        int id= (int)tab_pharmacie.getValueAt(index, 0);
-        PharmacieDAO.deletePharmacie();
-        tab_pharmacie.setModel(new PharmacieTableModel());
-
+        int a = jTable2.getSelectedRow();
+        int id =((Integer) jTable2.getValueAt(a,0));
+        PharmacieDAO pharmacieDAO = new PharmacieDAO();
+        pharmacieDAO.deletePharmacie(id);
+        JOptionPane.showMessageDialog(this, "pharmacie supprimer avec succés !", "Tunipharma",JOptionPane.DEFAULT_OPTION);
+        jTable2 = new javax.swing.JTable();
+        jTable2.setModel(new PharmacieTableModel());
+        jScrollPane1.setViewportView(jTable2);
     }//GEN-LAST:event_Btn_supprimerActionPerformed
 
     /**
@@ -151,7 +150,7 @@ public class pharmacie_afficher extends javax.swing.JFrame {
     private javax.swing.JButton Btn_modifier;
     private javax.swing.JButton Btn_supprimer;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tab_pharmacie;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }

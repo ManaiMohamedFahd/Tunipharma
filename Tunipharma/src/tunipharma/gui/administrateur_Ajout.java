@@ -64,7 +64,6 @@ java.util.Date Date_Naissance = new java.util.Date(90, 01, 02);
         botton_valider = new javax.swing.JButton();
         botton_annuler = new javax.swing.JButton();
         ScrollPane_photo = new javax.swing.JScrollPane();
-        JCalendar = new com.toedter.calendar.JDateChooser();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -133,8 +132,6 @@ java.util.Date Date_Naissance = new java.util.Date(90, 01, 02);
             }
         });
 
-        JCalendar.setDateFormatString("yyyy-mm-dd");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -174,8 +171,7 @@ java.util.Date Date_Naissance = new java.util.Date(90, 01, 02);
                         .addComponent(rb_homme)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                         .addComponent(rb_femme))
-                    .addComponent(tf_prenom)
-                    .addComponent(JCalendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tf_prenom))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(56, 56, 56)
@@ -197,10 +193,8 @@ java.util.Date Date_Naissance = new java.util.Date(90, 01, 02);
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(tf_prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(JCalendar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addComponent(jLabel4)
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -320,7 +314,6 @@ java.util.Date Date_Naissance = new java.util.Date(90, 01, 02);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser JCalendar;
     private javax.swing.JScrollPane ScrollPane_photo;
     private javax.swing.JButton botton_annuler;
     private javax.swing.JButton botton_valider;
