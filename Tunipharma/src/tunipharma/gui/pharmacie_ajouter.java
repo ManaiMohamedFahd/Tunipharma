@@ -24,6 +24,7 @@ public class pharmacie_ajouter extends javax.swing.JFrame {
      * Creates new form pharmacie_ajouter
      */
     public pharmacie_ajouter() {
+        super();
         initComponents();
     }
     List<Pharmacie> maliste;
@@ -137,17 +138,16 @@ public class pharmacie_ajouter extends javax.swing.JFrame {
                             .addComponent(tf_numero_patente)
                             .addComponent(cb_gouvernaurat, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(br_Ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                                        .addComponent(btn_quitter, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(rb_garde)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(rb_non_garde)))
-                                .addGap(10, 10, 10)))))
-                .addContainerGap(253, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rb_garde, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(br_Ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btn_quitter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(rb_non_garde)
+                                        .addGap(10, 10, 10)))))))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,11 +183,11 @@ public class pharmacie_ajouter extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(rb_garde)
                     .addComponent(rb_non_garde))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(br_Ajouter)
                     .addComponent(btn_quitter))
-                .addGap(102, 102, 102))
+                .addGap(39, 39, 39))
         );
 
         pack();
@@ -231,7 +231,9 @@ public class pharmacie_ajouter extends javax.swing.JFrame {
     }//GEN-LAST:event_br_AjouterActionPerformed
 
     private void btn_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_quitterActionPerformed
-        dispose();
+        pharmacie_afficher x2 = new pharmacie_afficher();
+         x2.setVisible(true);
+         dispose();
     }//GEN-LAST:event_btn_quitterActionPerformed
 
     /**

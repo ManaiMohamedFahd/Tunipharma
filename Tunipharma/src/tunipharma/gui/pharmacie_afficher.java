@@ -15,7 +15,8 @@ import tunipharma.util.MyConnection;
  * @author user
  */
 public class pharmacie_afficher extends javax.swing.JFrame {
-
+    
+    public static Pharmacie pharmacie = new Pharmacie();
     /**
      * Creates new form pharmacie_afficher
      */
@@ -37,6 +38,8 @@ public class pharmacie_afficher extends javax.swing.JFrame {
         Btn_supprimer = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +65,22 @@ public class pharmacie_afficher extends javax.swing.JFrame {
         jTable2.setModel(new PharmacieTableModel());
         jScrollPane1.setViewportView(jTable2);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setText("Ajouter");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setText("Retour");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,9 +93,11 @@ public class pharmacie_afficher extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Btn_supprimer)
-                    .addComponent(Btn_modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Btn_modifier, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                    .addComponent(Btn_supprimer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
@@ -87,9 +108,13 @@ public class pharmacie_afficher extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(42, 42, 42)
                         .addComponent(Btn_modifier)
-                        .addGap(18, 18, 18)
-                        .addComponent(Btn_supprimer))
+                        .addGap(42, 42, 42)
+                        .addComponent(Btn_supprimer)
+                        .addGap(42, 42, 42)
+                        .addComponent(jButton2))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
@@ -98,7 +123,14 @@ public class pharmacie_afficher extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_modifierActionPerformed
-
+        int a = jTable2.getSelectedRow();
+        int id = ((Integer) jTable2.getValueAt(a, 0));
+        PharmacieDAO pharmacieDao = new PharmacieDAO();
+        pharmacie = pharmacieDao.findPharmacieById(id);
+        pharmacie_modifier f1 = new pharmacie_modifier();
+        
+        f1.setVisible(true); //afficher l'interface
+        dispose();
     }//GEN-LAST:event_Btn_modifierActionPerformed
 
     private void Btn_supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_supprimerActionPerformed
@@ -111,6 +143,20 @@ public class pharmacie_afficher extends javax.swing.JFrame {
         jTable2.setModel(new PharmacieTableModel());
         jScrollPane1.setViewportView(jTable2);
     }//GEN-LAST:event_Btn_supprimerActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        PharmacieDAO pharmacieDao = new PharmacieDAO();
+        pharmacie_ajouter f2 = new pharmacie_ajouter();
+        f2.setVisible(true); //afficher l'interface
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       administrateur_super x1 = new administrateur_super();
+         x1.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +195,8 @@ public class pharmacie_afficher extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_modifier;
     private javax.swing.JButton Btn_supprimer;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable2;

@@ -108,5 +108,32 @@ public class PharmacieDAO {
     
     }
     
+    public Pharmacie findPharmacieById(int id) {
+        Pharmacie pharmacie = new Pharmacie();
+        String requete = "select * from Pharmacies where id=?";
+        try {
+            PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
+            ps.setInt(1, id);
+            ResultSet resultat = ps.executeQuery();
+            while (resultat.next()) {
+                pharmacie.setId_pharmacie(resultat.getInt(1));
+                pharmacie.setNom_pharmacie(resultat.getString(2));
+                pharmacie.setAdresse_pharmacie(resultat.getString(3));
+                pharmacie.setMail_pharmacie(resultat.getString(4));
+                pharmacie.setTelephone_pharmacie(resultat.getInt(5));
+                pharmacie.setNumero_patente(resultat.getInt(6));
+                pharmacie.setGouvernaurat(resultat.getString(7));
+                pharmacie.setJour_de_garde(resultat.getString(8));
+
+            }
+            return pharmacie;
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(AdministrateurDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("erreur lors de la recherche du pharmacie " + ex.getMessage());
+            return null;
+        }
+    }
+    
     
 }
