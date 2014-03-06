@@ -22,7 +22,7 @@ import java.util.List;
 public class PharmacienDAO {
     public void insertPharmacien(Pharmacien ph){
 
-        String requete = "insert into pharmacien (cin,nom,prenom,Telp,Email,id_ph) values (?,?,?,?,?,?)";
+        String requete = "insert into pharmacien (cin,nom,prenom,Telp,Email,id_ph,Mot_de_passe) values (?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
           //  ps.setInt(1, ph.getId_phc());
@@ -32,6 +32,7 @@ public class PharmacienDAO {
             ps.setInt(4, ph.getTelP());
             ps.setString(5, ph.getEmail());
             ps.setInt(6, ph.getId_ph());
+            ps.setString(7, ph.getMot_de_passe());
             
             ps.executeUpdate();
             System.out.println("Ajout effectuée avec succès");
@@ -43,7 +44,7 @@ public class PharmacienDAO {
 
 
     public void updatePharmacien(Pharmacien  ph){
-        String requete = "update pharmacien set cin=?,nom=?,prenom=?,telP=?,email=?,id_ph=? where id_phc=?";
+        String requete = "update pharmacien set cin=?,nom=?,prenom=?,telP=?,email=?,id_ph=?,Mot_de_passe? where id_phc=?";
         try {
             PreparedStatement ps = MyConnection.getInstance().prepareStatement(requete);
             ps.setInt(7, ph.getId_phc());
@@ -53,6 +54,7 @@ public class PharmacienDAO {
             ps.setInt(4, ph.getTelP());
             ps.setString(5, ph.getEmail());
             ps.setInt(6, ph.getId_ph());
+            ps.setString(7, ph.getMot_de_passe());
             ps.executeUpdate();
             System.out.println("Mise à jour effectuée avec succès");
         } catch (SQLException ex) {

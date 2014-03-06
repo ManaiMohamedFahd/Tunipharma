@@ -20,8 +20,9 @@ public class Pharmacien {
     private int telP;
     private String email;
     private int id_ph;
+    private String Mot_de_passe;
     
-    public Pharmacien(int id_phc ,int cin ,String nom ,String prenom ,int telP ,String email ,int id_ph){
+    public Pharmacien(int id_phc ,int cin ,String nom ,String prenom ,int telP ,String email ,int id_ph,String Mot_de_passe){
         this.id_phc=id_phc;
         this.cin=cin;
         this.nom=nom;
@@ -29,6 +30,7 @@ public class Pharmacien {
         this.telP=telP;
         this.email=email;
         this.id_ph=id_ph;
+        this.Mot_de_passe=Mot_de_passe;
     }
     
     public Pharmacien(){}
@@ -61,6 +63,9 @@ public class Pharmacien {
         this.id_ph=id_ph;
     }
     
+    public void setMot_de_passe(String Mot_de_passe){
+        this.Mot_de_passe=Mot_de_passe;
+    }
     
     
     public int getId_phc(){
@@ -89,6 +94,9 @@ public class Pharmacien {
     
     public int getId_ph(){
         return id_ph;
+    }
+    public String getMot_de_passe(){
+        return Mot_de_passe;
     }
     
 }

@@ -81,7 +81,7 @@ public class AjouterMedicament extends javax.swing.JFrame {
         cbType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Certifier", "Non Certifier" }));
 
         jLabel7.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
-        jLabel7.setText("DnT");
+        jLabel7.setText("DT");
 
         tbIdPh.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
 
@@ -143,7 +143,7 @@ public class AjouterMedicament extends javax.swing.JFrame {
                                     .addComponent(tbRef, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                                     .addComponent(tbLib)
                                     .addComponent(cbType, 0, 1, Short.MAX_VALUE))))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
