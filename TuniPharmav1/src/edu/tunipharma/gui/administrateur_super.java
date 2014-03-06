@@ -88,6 +88,11 @@ public class administrateur_super extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Gérer Les pharmaciens ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
         btn_super_affich_admin.setText("Afficher liste pharmaciens");
+        btn_super_affich_admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_super_affich_adminActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -221,7 +226,9 @@ public class administrateur_super extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_super_statActionPerformed
 
     private void btn_super_afficher_pharmacieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_super_afficher_pharmacieActionPerformed
-        // TODO add your handling code here:
+         pharmacieView f1 = new pharmacieView();
+        f1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btn_super_afficher_pharmacieActionPerformed
 
     private void btn_super_ajout_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_super_ajout_adminActionPerformed
@@ -235,6 +242,12 @@ public class administrateur_super extends javax.swing.JFrame {
         dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_super_deconnecterActionPerformed
+
+    private void btn_super_affich_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_super_affich_adminActionPerformed
+        PharmacienView f2 = new PharmacienView();
+        f2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_super_affich_adminActionPerformed
 
     /**
      * @param args the command line arguments

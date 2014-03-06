@@ -201,6 +201,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Afficher liste pharmaciens"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_super_affich_adminActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
