@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField1"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="lb_adresse" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lb_sexe" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lb_prenom" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lb_nom" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lb_adresse_mail" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="lb_date_naissance" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lb_ville" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="lb_gouvernaurat" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="tf_gouvernaurat" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btn_retour" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="tf_prenom" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tf_sexe" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tf_date_naissance" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tf_adresse_mail" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tf_ville" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tf_adresse" alignment="0" max="32767" attributes="0"/>
+                  <Component id="tf_nom" alignment="1" min="-2" pref="280" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb_nom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_nom" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb_prenom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_prenom" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb_sexe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_sexe" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb_date_naissance" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_date_naissance" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb_adresse_mail" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="tf_adresse_mail" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb_gouvernaurat" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_gouvernaurat" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lb_ville" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tf_ville" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="tf_adresse" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb_adresse" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
+              <Component id="btn_retour" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lb_nom">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nom:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_retour">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Retour"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_retourActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_prenom">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Prenom:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_sexe">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sexe:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_date_naissance">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Date_Naissance:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_adresse_mail">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adresse_mail:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_gouvernaurat">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Gouvernaurat:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_ville">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ville:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_adresse">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adresse:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_nom">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_nomActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_ville">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_villeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_adresse">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_adresseActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_adresse_mail">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_gouvernaurat">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_sexe">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_date_naissance">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_date_naissanceActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tf_prenom">
+    </Component>
+  </SubComponents>
+</Form>
