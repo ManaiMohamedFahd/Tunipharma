@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -46,25 +50,25 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField8" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfdate" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfmail" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfville" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfadresse" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="br_homme" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="br_femme" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="tfpsw" alignment="1" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtNom" min="-2" pref="295" max="-2" attributes="0"/>
-                                          <Component id="jTextField1" min="-2" pref="295" max="-2" attributes="0"/>
+                                          <Component id="tfnom" min="-2" pref="295" max="-2" attributes="0"/>
+                                          <Component id="tfprenom" min="-2" pref="295" max="-2" attributes="0"/>
+                                          <Component id="cbgvr" alignment="0" min="-2" pref="203" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="txtGouvernaurat" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -97,53 +101,51 @@
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtNom" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfnom" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfprenom" min="-2" max="-2" attributes="0"/>
                   <Component id="txtPrenom" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="br_homme" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="br_femme" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="br_homme" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="br_femme" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtDate_naissance" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="txtDate_naissance" pref="21" max="32767" attributes="0"/>
+                  <Component id="tfdate" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfmail" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAdresse_mail" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNumero_telephone" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="cbgvr" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfville" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAdresse" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtMot_de_passe" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfadresse" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Gouvernaurat" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtGouvernaurat" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfpsw" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="jButton3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
@@ -174,7 +176,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="txtAdresse">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Adresse:"/>
+        <Property name="text" type="java.lang.String" value="ville:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
@@ -188,18 +190,16 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="tfprenom">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNom">
+    <Component class="javax.swing.JTextField" name="tfnom">
     </Component>
     <Component class="javax.swing.JLabel" name="txtDate_naissance">
       <Properties>
         <Property name="text" type="java.lang.String" value="Date_naissance:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="tfmail">
     </Component>
     <Component class="javax.swing.JLabel" name="txtAdresse_mail">
       <Properties>
@@ -208,10 +208,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="txtMot_de_passe">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mot_de_passe:"/>
+        <Property name="text" type="java.lang.String" value="adresse:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="tfville">
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
@@ -229,23 +229,29 @@
         <Property name="text" type="java.lang.String" value="Sexe:&#x9;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField7">
+    <Component class="javax.swing.JTextField" name="tfdate">
     </Component>
     <Component class="javax.swing.JLabel" name="txtNumero_telephone">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Numero_telephone:"/>
+        <Property name="text" type="java.lang.String" value="Gouvernaurat:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField8">
+    <Component class="javax.swing.JTextField" name="tfadresse">
     </Component>
     <Component class="javax.swing.JRadioButton" name="br_homme">
       <Properties>
-        <Property name="text" type="java.lang.String" value="M"/>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Homme"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="br_femme">
       <Properties>
-        <Property name="text" type="java.lang.String" value="F"/>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Femme"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="br_femmeActionPerformed"/>
@@ -253,13 +259,45 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Gouvernaurat">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gouvernaurat:"/>
+        <Property name="text" type="java.lang.String" value="Mot de passe:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtGouvernaurat">
+    <Component class="javax.swing.JTextField" name="tfpsw">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGouvernauratActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfpswActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cbgvr">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="24">
+            <StringItem index="0" value="Ariana"/>
+            <StringItem index="1" value="B&#xe9;ja"/>
+            <StringItem index="2" value="Ben Arous"/>
+            <StringItem index="3" value="Bizerte"/>
+            <StringItem index="4" value="Gab&#xe8;s"/>
+            <StringItem index="5" value="Gafsa"/>
+            <StringItem index="6" value="Jendouba"/>
+            <StringItem index="7" value="Kairouan"/>
+            <StringItem index="8" value="Kasserine"/>
+            <StringItem index="9" value="K&#xe9;bili"/>
+            <StringItem index="10" value="La Manouba"/>
+            <StringItem index="11" value="Le Kef"/>
+            <StringItem index="12" value="Mahdia"/>
+            <StringItem index="13" value="M&#xe9;denine"/>
+            <StringItem index="14" value="Monastir"/>
+            <StringItem index="15" value="Nabeul"/>
+            <StringItem index="16" value="Sfax"/>
+            <StringItem index="17" value="Sidi Bouzid"/>
+            <StringItem index="18" value="Siliana"/>
+            <StringItem index="19" value="Sousse"/>
+            <StringItem index="20" value="Tataouine"/>
+            <StringItem index="21" value="Tozeur"/>
+            <StringItem index="22" value="Tunis"/>
+            <StringItem index="23" value="Zaghouan"/>
+          </StringArray>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

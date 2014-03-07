@@ -4,6 +4,7 @@
  */
 package edu.tunipharma.gui;
 
+
 import edu.tunipharma.dao.PharmacienDAO;
 import edu.tunipharma.entities.Pharmacien;
 import javax.swing.JOptionPane;
@@ -34,21 +35,16 @@ public class InscriptionPharmacien extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         txtAdresse_mail = new javax.swing.JLabel();
-        txtMot_de_passe = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        br_femme = new javax.swing.JRadioButton();
-        br_homme = new javax.swing.JRadioButton();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        tfemail = new javax.swing.JTextField();
+        tfprenom = new javax.swing.JTextField();
         txtPrenom = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        tfpsw = new javax.swing.JTextField();
         txtAdresse = new javax.swing.JLabel();
-        txtNom = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        tfcin = new javax.swing.JTextField();
+        tfnom = new javax.swing.JTextField();
         txtNumero_telephone = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tftel = new javax.swing.JTextField();
         txtDate_naissance = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,30 +66,23 @@ public class InscriptionPharmacien extends javax.swing.JFrame {
             }
         });
 
-        txtAdresse_mail.setText("Adresse_mail:");
-
-        txtMot_de_passe.setText("Mot_de_passe:");
+        txtAdresse_mail.setText("Num_Tel:");
 
         jLabel1.setText("CIN :");
 
-        br_femme.setText("F");
-        br_femme.addActionListener(new java.awt.event.ActionListener() {
+        tfemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                br_femmeActionPerformed(evt);
+                tfemailActionPerformed(evt);
             }
         });
 
-        br_homme.setText("M");
-
-        jLabel6.setText("Sexe:\t");
-
         txtPrenom.setText("Nom :");
 
-        txtAdresse.setText("Adresse:");
+        txtAdresse.setText("mot de passe:");
 
-        txtNumero_telephone.setText("Numero_telephone:");
+        txtNumero_telephone.setText("Email:");
 
-        txtDate_naissance.setText("Date_naissance:");
+        txtDate_naissance.setText("Prenom:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,90 +91,65 @@ public class InscriptionPharmacien extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(125, 125, 125)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
             .addGroup(layout.createSequentialGroup()
-                .addGap(247, 247, 247)
-                .addComponent(jLabel3)
-                .addContainerGap(248, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAdresse_mail)
+                            .addComponent(txtDate_naissance)
+                            .addComponent(txtAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumero_telephone, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(79, 79, 79)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField7)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField6)
-                            .addComponent(jTextField8)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1)
-                                    .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(br_homme)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(br_femme)
-                                .addGap(52, 52, 52))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfcin, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtAdresse_mail, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtDate_naissance, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtNumero_telephone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtAdresse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtMot_de_passe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(tfemail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                                .addComponent(tftel, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfnom, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfprenom, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfpsw)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPrenom))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(br_homme)
-                        .addComponent(br_femme)))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDate_naissance, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAdresse_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfcin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrenom))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDate_naissance, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfprenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tftel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAdresse_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addComponent(tfemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtNumero_telephone, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMot_de_passe, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                    .addComponent(tfpsw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAdresse))
+                .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,55 +166,51 @@ public class InscriptionPharmacien extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-              
-        //récup.sex(radio)
-        String sex ="";
-        if(br_homme.isSelected())
-            sex=br_homme.getText();
-        if(br_femme.isSelected())
-            sex=br_femme.getText();
-        
-        //récup.Nom 
-        String Nom;
-        Nom = txtNom.getText();
-         //récup.Prenom: 
-        String Prenom;
-        Prenom = txtPrenom.getText();
-        //récup.Date_naissance: 
-        String Date_naissance;
-        Date_naissance = txtDate_naissance.getText();
-         //récup.Adresse_mail:
-        String Adresse_mail;
-        Adresse_mail = txtAdresse_mail.getText();
-          //récup.Numero_telephone
-        String Numero_telephone;
-        Numero_telephone = txtNumero_telephone.getText();
-          //récup.Adresse 
-        String Adresse;
-        Adresse = txtAdresse.getText();
-       // récup. Mot_de_passe:
-        String Mot_de_passe;
-        Mot_de_passe = txtMot_de_passe.getText();
+//        //récup.Nom 
+//        String Cin;
+//        Cin = txtcin.getText();
+//         //récup.nom: 
+//        String nom;
+//        nom = txtnom.getText();
+//        //récup.prenom: 
+//        String prenom;
+//        prenom = txtprenom.getText();
+//        
+//        //récup.Date_naissance: 
+//        String Date_naissance;
+//        Date_naissance = txtDate_naissance.getText();
+//         //récup.Adresse_mail:
+//        String Adresse_mail;
+//        Adresse_mail = txtAdresse_mail.getText();
+//          //récup.Numero_telephone
+//        String Numero_telephone;
+//        Numero_telephone = txtNumero_telephone.getText();
+//          //récup.Adresse 
+//        String Adresse;
+//        Adresse = txtAdresse.getText();
+//       // récup. Mot_de_passe:
+//        String Mot_de_passe;
+//        Mot_de_passe = txtMot_de_passe.getText();
         
         //insérer Client
         Pharmacien  Ph = new Pharmacien();
         PharmacienDAO phdao = new PharmacienDAO();
-        Ph.setNom(Nom);
-        Ph.setPrenom(Prenom);
-        Ph.setDate_naissance(Date_naissance);
-        Ph.setAdresse_mail(Adresse_mail);
-        Ph.setNumero_telephone(Numero_telephone);
-        Ph.setAdresse(Adresse);
-        Ph.setMot_de_passe(Mot_de_passe);
-        phdao.insertclients(Ph);
+        
+        Ph.setCin(Integer.parseInt(tfcin.getText()));
+        Ph.setNom(tfnom.getText());
+        Ph.setPrenom(tfprenom.getText());
+        Ph.setTelP(Integer.parseInt(tftel.getText()));
+        Ph.setEmail(tfemail.getText());
+        Ph.setMot_de_passe(tfpsw.getText());
+        phdao.insertPharmacien(Ph);
         JOptionPane.showMessageDialog(this, "ajout effectué avec succés");
         
      
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void br_femmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_br_femmeActionPerformed
+    private void tfemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_br_femmeActionPerformed
+    }//GEN-LAST:event_tfemailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,24 +247,19 @@ public class InscriptionPharmacien extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton br_femme;
-    private javax.swing.JRadioButton br_homme;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField tfcin;
+    private javax.swing.JTextField tfemail;
+    private javax.swing.JTextField tfnom;
+    private javax.swing.JTextField tfprenom;
+    private javax.swing.JTextField tfpsw;
+    private javax.swing.JTextField tftel;
     private javax.swing.JLabel txtAdresse;
     private javax.swing.JLabel txtAdresse_mail;
     private javax.swing.JLabel txtDate_naissance;
-    private javax.swing.JLabel txtMot_de_passe;
-    private javax.swing.JTextField txtNom;
     private javax.swing.JLabel txtNumero_telephone;
     private javax.swing.JLabel txtPrenom;
     // End of variables declaration//GEN-END:variables

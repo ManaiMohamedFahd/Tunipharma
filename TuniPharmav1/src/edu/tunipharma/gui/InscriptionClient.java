@@ -4,6 +4,9 @@
  */
 package edu.tunipharma.gui;
 
+
+import edu.tunipharma.dao.ClientDAO;
+import edu.tunipharma.entities.Client;
 import javax.print.DocFlavor;
 import javax.swing.JOptionPane;
 
@@ -29,28 +32,29 @@ public class InscriptionClient extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         txtPrenom = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtAdresse = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        txtNom = new javax.swing.JTextField();
+        tfprenom = new javax.swing.JTextField();
+        tfnom = new javax.swing.JTextField();
         txtDate_naissance = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        tfmail = new javax.swing.JTextField();
         txtAdresse_mail = new javax.swing.JLabel();
         txtMot_de_passe = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        tfville = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        tfdate = new javax.swing.JTextField();
         txtNumero_telephone = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        tfadresse = new javax.swing.JTextField();
         br_homme = new javax.swing.JRadioButton();
         br_femme = new javax.swing.JRadioButton();
         Gouvernaurat = new javax.swing.JLabel();
-        txtGouvernaurat = new javax.swing.JTextField();
+        tfpsw = new javax.swing.JTextField();
+        cbgvr = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,7 +65,7 @@ public class InscriptionClient extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 102, 0));
         jLabel3.setText("Inscription");
 
-        txtAdresse.setText("Adresse:");
+        txtAdresse.setText("ville:");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Annuler");
@@ -75,7 +79,7 @@ public class InscriptionClient extends javax.swing.JFrame {
 
         txtAdresse_mail.setText("Adresse_mail:");
 
-        txtMot_de_passe.setText("Mot_de_passe:");
+        txtMot_de_passe.setText("adresse:");
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton3.setText("Valider");
@@ -87,24 +91,28 @@ public class InscriptionClient extends javax.swing.JFrame {
 
         jLabel6.setText("Sexe:\t");
 
-        txtNumero_telephone.setText("Numero_telephone:");
+        txtNumero_telephone.setText("Gouvernaurat:");
 
-        br_homme.setText("M");
+        buttonGroup1.add(br_homme);
+        br_homme.setText("Homme");
 
-        br_femme.setText("F");
+        buttonGroup1.add(br_femme);
+        br_femme.setText("Femme");
         br_femme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 br_femmeActionPerformed(evt);
             }
         });
 
-        Gouvernaurat.setText("Gouvernaurat:");
+        Gouvernaurat.setText("Mot de passe:");
 
-        txtGouvernaurat.addActionListener(new java.awt.event.ActionListener() {
+        tfpsw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtGouvernauratActionPerformed(evt);
+                tfpswActionPerformed(evt);
             }
         });
+
+        cbgvr.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ariana", "Béja", "Ben Arous", "Bizerte", "Gabès", "Gafsa", "Jendouba", "Kairouan", "Kasserine", "Kébili", "La Manouba", "Le Kef", "Mahdia", "Médenine", "Monastir", "Nabeul", "Sfax", "Sidi Bouzid", "Siliana", "Sousse", "Tataouine", "Tozeur", "Tunis", "Zaghouan" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,22 +138,22 @@ public class InscriptionClient extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(79, 79, 79)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField7)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jTextField4)
-                                    .addComponent(jTextField6)
-                                    .addComponent(jTextField8)
+                                    .addComponent(tfdate)
+                                    .addComponent(tfmail)
+                                    .addComponent(tfville)
+                                    .addComponent(tfadresse)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(br_homme)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(br_femme)
                                         .addGap(52, 52, 52))
+                                    .addComponent(tfpsw, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(txtGouvernaurat, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                                            .addComponent(tfnom, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(tfprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cbgvr, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Gouvernaurat)
@@ -167,43 +175,42 @@ public class InscriptionClient extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfprenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPrenom))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(br_homme)
-                        .addComponent(br_femme)))
-                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDate_naissance, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(br_homme)
+                    .addComponent(br_femme)
+                    .addComponent(jLabel6))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtDate_naissance, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
+                    .addComponent(tfdate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAdresse_mail, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNumero_telephone, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtNumero_telephone, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbgvr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfville, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMot_de_passe, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfadresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Gouvernaurat)
-                    .addComponent(txtGouvernaurat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                    .addComponent(tfpsw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -222,49 +229,54 @@ public class InscriptionClient extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         
-        //récup.sex(radio)
-        String sex ="";
-        if(br_homme.isSelected())
-            sex=br_homme.getText();
-        if(br_femme.isSelected())
-            sex=br_femme.getText();
         
-        //récup.Nom 
-        String Nom;
-        Nom = txtNom.getText();
-         //récup.Prenom: 
-        String Prenom;
-        Prenom = txtPrenom.getText();
-        //récup.Date_naissance: 
-        String Date_naissance;
-        Date_naissance = txtDate_naissance.getText();
-         //récup.Adresse_mail:
-        String Adresse_mail;
-        Adresse_mail = txtAdresse_mail.getText();
-          //récup.Numero_telephone
-        String Numero_telephone;
-        Numero_telephone = txtNumero_telephone.getText();
-          //récup.Adresse 
-        String Adresse;
-        Adresse = txtAdresse.getText();
-       // récup. Mot_de_passe:
-        String Mot_de_passe;
-        Mot_de_passe = txtMot_de_passe.getText();
-       //Gouvernaurat 
-        String Gouvernaurat;
-        Gouvernaurat = txtGouvernaurat.getText();
+        
+//        //récup.Nom 
+//        String Nom;
+//        Nom = txtNom.getText();
+//         //récup.Prenom: 
+//        String Prenom;
+//        Prenom = txtPrenom.getText();
+//        //récup.Date_naissance: 
+//        String Date_naissance;
+//        Date_naissance = txtDate_naissance.getText();
+//         //récup.Adresse_mail:
+//        String Adresse_mail;
+//        Adresse_mail = txtAdresse_mail.getText();
+//          //récup.Numero_telephone
+//        String Numero_telephone;
+//        Numero_telephone = txtNumero_telephone.getText();
+//          //récup.Adresse 
+//        String Adresse;
+//        Adresse = txtAdresse.getText();
+//       // récup. Mot_de_passe:
+//        String Mot_de_passe;
+//        Mot_de_passe = txtMot_de_passe.getText();
+//       //Gouvernaurat 
+//        String Gouvernaurat;
+//        Gouvernaurat = txtGouvernaurat.getText();
+        
+        //récup.sex(radio)
+        
+        
         //insérer Client
-//        clients cl = new clients();
-//        ClientDAO ctdao= new ClientDAO;
-//        cl.setNom(Nom);
-//        cl.setPrenom(Prenom);
-//        cl.setDate_naissance(Date_naissance);
-//        cl.setAdresse_mail(Adresse_mail);
-//        cl.setNumero_telephone(Numero_telephone);
-//        cl.setAdresse(Adresse);
-//        cl.setMot_de_passe(Mot_de_passe);
-//        cl.setGouvernaurat(Gouvernaurat);
-//        ctdao.insertclients(cl);
+        Client cl = new Client();
+        ClientDAO ctdao = new ClientDAO() ;
+        cl.setNom(tfnom.getText());
+        cl.setPrenom(tfprenom.getText());
+        cl.setDate_Naissance(tfdate.getText());
+        cl.setAdresse_mail(tfmail.getText());
+        cl.setGouvernaurat((String) cbgvr.getSelectedItem());
+        cl.setVille(tfville.getText());
+        cl.setAdresse(tfadresse.getText());
+        cl.setMot_de_passe(tfpsw.getText());
+        String sexe ="";
+        if(br_homme.isSelected())
+            sexe=br_homme.getText();
+        if(br_femme.isSelected())
+            sexe=br_femme.getText();
+        cl.setSexe(sexe);
+        ctdao.insertClient(cl);
         JOptionPane.showMessageDialog(this, "ajout effectué avec succés");
         
         
@@ -280,9 +292,9 @@ public class InscriptionClient extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_br_femmeActionPerformed
 
-    private void txtGouvernauratActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGouvernauratActionPerformed
+    private void tfpswActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfpswActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtGouvernauratActionPerformed
+    }//GEN-LAST:event_tfpswActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,23 +334,24 @@ public class InscriptionClient extends javax.swing.JFrame {
     private javax.swing.JLabel Gouvernaurat;
     private javax.swing.JRadioButton br_femme;
     private javax.swing.JRadioButton br_homme;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox cbgvr;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField tfadresse;
+    private javax.swing.JTextField tfdate;
+    private javax.swing.JTextField tfmail;
+    private javax.swing.JTextField tfnom;
+    private javax.swing.JTextField tfprenom;
+    private javax.swing.JTextField tfpsw;
+    private javax.swing.JTextField tfville;
     private javax.swing.JLabel txtAdresse;
     private javax.swing.JLabel txtAdresse_mail;
     private javax.swing.JLabel txtDate_naissance;
-    private javax.swing.JTextField txtGouvernaurat;
     private javax.swing.JLabel txtMot_de_passe;
-    private javax.swing.JTextField txtNom;
     private javax.swing.JLabel txtNumero_telephone;
     private javax.swing.JLabel txtPrenom;
     // End of variables declaration//GEN-END:variables
